@@ -1,14 +1,13 @@
 import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
-import {Box, Button, FormControl, IconButton, TextField} from '@material-ui/core';
-import {AddBox} from '@material-ui/icons';
+import {Button, Paper, TextField} from '@material-ui/core';
+
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
-    disabled?: boolean
+
 }
 
-export const AddItemForm = React.memo(function({addItem, disabled = false}: AddItemFormPropsType) {
-    console.log("AddItemForm called")
+export const AddItemForm = React.memo(function({addItem}: AddItemFormPropsType) {
 
     let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
@@ -36,17 +35,19 @@ export const AddItemForm = React.memo(function({addItem, disabled = false}: AddI
     }
 
     return <div>
+        <Paper style={{padding: '10px'}}>
         <TextField variant="outlined"
-                   disabled={disabled}
                    error={!!error}
                    value={title}
                    onChange={onChangeHandler}
                    onKeyPress={onKeyPressHandler}
-                   label="Title"
+                   label="Заголовок"
                    helperText={error}
         />
-        <IconButton color="primary" onClick={addItemHandler} disabled={disabled}>
-            <AddBox />
-        </IconButton>
+        <Button  style={{padding: '20px'}}
+                 onClick={addItemHandler}
+            color={'primary'}>Добавить новую нотацию
+        </Button>
+        </Paper>
     </div>
 })
