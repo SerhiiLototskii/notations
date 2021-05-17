@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import {AppBar, Container, Toolbar, Typography} from "@material-ui/core";
 import {Route, Switch} from 'react-router-dom';
-import {NotationsList} from "../components/notations/notationsList";
+import {NotationsList} from "../components/notation/notationsList";
 
 function App() {
 

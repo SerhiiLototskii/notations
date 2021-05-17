@@ -10,7 +10,7 @@ import {Grid} from "@material-ui/core";
 import {AppRootStateType} from "../../app/store";
 import {useDispatch, useSelector} from "react-redux";
 import {AddItemForm} from "../addItemForm/AddItemForm";
-import {Notation} from "../notation/notation";
+import {Notation} from "./notation";
 
 export const NotationsList = React.memo(() => {
     const dispatch = useDispatch()

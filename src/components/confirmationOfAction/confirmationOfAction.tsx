@@ -15,7 +15,7 @@ const Transition = React.forwardRef(function Transition(
 type confirmationOfActionPropsType = {
     buttonValue: string
     alertTitleValue: string
-    performAnAction?:() => void
+    performAnAction?: () => void
     handleCloseEditMode?: () => void
 }
 
@@ -23,10 +23,10 @@ type confirmationOfActionPropsType = {
 export default function AlertDialogSlide(props: confirmationOfActionPropsType) {
     const [open, setOpen] = React.useState(false);
     const performAnAction = () => {
-        if (props.performAnAction){
+        if (props.performAnAction) {
             props.performAnAction()
         }
-        if (props.handleCloseEditMode){
+        if (props.handleCloseEditMode) {
             props.handleCloseEditMode()
         }
 
